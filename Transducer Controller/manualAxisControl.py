@@ -1,43 +1,42 @@
 from actionSelector import choice
+#EVERYTHING THAT ACTUALLY WORKS IS COMMENTED OUT BECAUSE I AM PROGRAMMING IT IN ON A WINDOWS BUT IT CAN ONLY RUN ON A RPi
+from tkinter import *
+#from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
+import time
+import atexit
+from Variables import stepsPerRotation, xPins, stepDegrees, microsteps
+
+#mh = Adafruit_MotorHAT()
+
+root = Tk()
+
+v = IntVar()
+v.set(1)
+degreesMoved = 0
+microstepsBack = 0
+
+#def turnOffMotors():
+    #mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
+    #mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
+    #mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
+    #mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
+    #print (degreesMoved)
+
+#atexit.register(turnOffMotors)
+
+#myStepper = mh.getStepper(stepsPerRotation, xPins)
+
+languages = [
+("1/8 Microstep / 0.225 Degrees", 1),
+("1 Step / 1.8 Degrees", 2),
+("45 Degrees", 3),
+("90 Degrees", 4),
+("180 Degrees", 5),
+("360 Degrees", 6),
+("Reset to Rail", 7),
+("Custom Value in Degrees", 8) #Todo don't click it for now
+]
 if choice == "manualX":
-    #EVERYTHING THAT ACTUALLY WORKS IS COMMENTED OUT BECAUSE I AM PROGRAMMING IT IN ON A WINDOWS BUT IT CAN ONLY RUN ON A RPi
-    from tkinter import *
-    #from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
-    import time
-    import atexit
-    from Variables import stepsPerRotation, xPins, stepDegrees, microsteps
-
-    #mh = Adafruit_MotorHAT()
-
-    root = Tk()
-
-    v = IntVar()
-    v.set(1)
-    degreesMoved = 0
-    microstepsBack = 0
-
-    #def turnOffMotors():
-    #    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
-    #    print (degreesMoved)
-
-    #atexit.register(turnOffMotors)
-
-    #myStepper = mh.getStepper(stepsPerRotation, xPins)
-
-    languages = [
-    ("1/8 Microstep / 0.225 Degrees", 1),
-    ("1 Step / 1.8 Degrees", 2),
-    ("45 Degrees", 3),
-    ("90 Degrees", 4),
-    ("180 Degrees", 5),
-    ("360 Degrees", 6),
-    ("Reset to Rail", 7),
-    ("Custom Value in Degrees", 8) #Todo don't click it for now
-    ]
-
     def one_eight():
         global degreesMoved
         degreesMoved = degreesMoved + 0.225
@@ -113,44 +112,6 @@ if choice == "manualX":
     mainloop()
     print (degreesMoved)
 elif choice == "manualY":
-    #EVERYTHING THAT ACTUALLY WORKS IS COMMENTED OUT BECAUSE I AM PROGRAMMING IT IN ON A WINDOWS BUT IT CAN ONLY RUN ON A RPi
-    from tkinter import *
-    #from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
-    import time
-    import atexit
-    from Variables import stepsPerRotation, yPins, stepDegrees, microsteps
-
-    #mh = Adafruit_MotorHAT()
-
-    root = Tk()
-
-    v = IntVar()
-    v.set(1)
-    degreesMoved = 0
-    microstepsBack = 0
-
-    #def turnOffMotors():
-    #    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-    #    mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
-    #    print (degreesMoved)
-
-    #atexit.register(turnOffMotors)
-
-    #myStepper = mh.getStepper(stepsPerRotation, yPins)
-
-    languages = [
-    ("1/8 Microstep / 0.225 Degrees", 1),
-    ("1 Step / 1.8 Degrees", 2),
-    ("45 Degrees", 3),
-    ("90 Degrees", 4),
-    ("180 Degrees", 5),
-    ("360 Degrees", 6),
-    ("Reset to Rail", 7),
-    ("Custom Value in Degrees", 8) #Todo don't click it for now
-    ]
-
     def one_eight():
         global degreesMoved
         degreesMoved = degreesMoved + 0.225
@@ -225,6 +186,5 @@ elif choice == "manualY":
 
     mainloop()
     print (degreesMoved)
-
 else:
     print("error")
