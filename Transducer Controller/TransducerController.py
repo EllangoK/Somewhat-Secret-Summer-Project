@@ -1,2 +1,2 @@
-import manualXAxis
+import manualAxisControl
 #Obviously not final
