@@ -1,0 +1,13 @@
+stepDegrees = 1.8
+degreesInRotation = 360
+stepsPerRotation = degreesInRotation/stepDegrees
+xPins = 1
+yPins = 2
+#microsteps = 4
+#microstep_curve = [0, 98, 180, 236, 255]
+microsteps = 8
+microstep_curve = [0, 50, 98, 142, 180, 212, 236, 250, 255]
+#microsteps = 16 
+#microstep_curve = [0, 25, 50, 74, 98, 120, 141, 162, 180, 197, 212, 225, 236, 244, 250, 253, 255]
+centerX = 300
+centerY = 500
