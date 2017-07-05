@@ -35,8 +35,9 @@ languages = [
 ("180 Degrees", 5),
 ("360 Degrees", 6),
 ("Reset to Rail", 7),
-("Custom Value in Degrees", 8) #Todo don't click it for now
+("Custom Value in Degrees", 8)
 ]
+
 if choice == "manualX":
     def one_eight():
         global degreesMoved
@@ -81,6 +82,13 @@ if choice == "manualX":
         #myStepperX.step(microstepsBack, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.MICROSTEP)
         print ("Reset")
 
+    def customVal():
+        from customValue import customAmt
+        global degreesMoved
+        degreesMoved = degreesMoved + customAmt
+        customMicrosteps = 8*(customAmt/stepDegrees)
+        #myStepperX.step(customAmt, Adafruit_MotorHAT.FORWARD, Adafruit_MotorHAT.MICROSTEP)
+
     options = {1 : one_eight,
                 2 : oneStep,
                 3 : fortyFiveDegrees,
@@ -88,7 +96,7 @@ if choice == "manualX":
                 5 : hundredEightyDegrees,
                 6 : threeHundredSixtyDegrees,
                 7 : reset,
-    #                8 : customVal #Todo
+                8 : customVal 
     }
 
     def ShowChoice():
@@ -156,6 +164,13 @@ elif choice == "manualY":
         #myStepperY.step(microstepsBack, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.MICROSTEP)
         print ("Reset")
 
+    def customVal():
+        from customValue import customAmt
+        global degreesMoved
+        degreesMoved = degreesMoved + customAmt
+        customMicrosteps = 8*(customAmt/stepDegrees)
+        #myStepperX.step(customAmt, Adafruit_MotorHAT.FORWARD, Adafruit_MotorHAT.MICROSTEP)
+
     options = {1 : one_eight,
                 2 : oneStep,
                 3 : fortyFiveDegrees,
@@ -163,7 +178,7 @@ elif choice == "manualY":
                 5 : hundredEightyDegrees,
                 6 : threeHundredSixtyDegrees,
                 7 : reset,
-    #                8 : customVal #Todo
+                8 : customVal 
     }
 
     def ShowChoice():
