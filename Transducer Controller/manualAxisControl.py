@@ -1,54 +1,5 @@
-
-from tkinter import *
-
-#Yo I love indicatoron so what
-
-root = Tk()
-
-v = IntVar()
-v.set(1)
-
-def manualX():
-    global choiceMovement
-    choiceMovement = "manualX"
-    root.destroy()
-
-def manualY():
-    global choiceMovement
-    choiceMovement = "manualY"
-
-options = {1 : manualX,
-                2 : manualY,
-}
-
-Movement = [
-    ("Manual X-Axis Control", 1),
-    ("Manual Y-Axis Control", 2),
-]
-
-def ShowChoice():
-    options[v.get()]()
-    root.destroy()
-
-
-Label(root, 
-      text="""What do you want to do?""",
-      justify = LEFT,
-      padx = 20).pack()
-
-for txt, val in Movement:
-    Radiobutton(root, 
-                text=txt,
-                indicatoron = 0,
-                width = 20,
-                padx = 20, 
-                variable=v, 
-                command=ShowChoice,
-                value=val).pack(anchor=W)
-
-mainloop()
-
-if choiceMovement == "manualX":
+from actionSelector import choice
+if choice == "manualX":
     #EVERYTHING THAT ACTUALLY WORKS IS COMMENTED OUT BECAUSE I AM PROGRAMMING IT IN ON A WINDOWS BUT IT CAN ONLY RUN ON A RPi
     from tkinter import *
     #from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
@@ -161,7 +112,7 @@ if choiceMovement == "manualX":
 
     mainloop()
     print (degreesMoved)
-elif choiceMovement == "manualY":
+elif choice == "manualY":
     #EVERYTHING THAT ACTUALLY WORKS IS COMMENTED OUT BECAUSE I AM PROGRAMMING IT IN ON A WINDOWS BUT IT CAN ONLY RUN ON A RPi
     from tkinter import *
     #from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
