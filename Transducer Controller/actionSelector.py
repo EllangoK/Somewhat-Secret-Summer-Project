@@ -1,4 +1,3 @@
-
 from tkinter import *
 #Yo I love indicatoron so what
 #More stuff will be added
