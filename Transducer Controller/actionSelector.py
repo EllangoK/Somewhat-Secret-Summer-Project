@@ -13,13 +13,19 @@ def manualY():
     global choice
     choice = "manualY"
 
+def manualServo():
+    global choice
+    choice = "manualServo"
+
 options = {1 : manualX,
                 2 : manualY,
+                3 : manualServo
 }
 
 Movement = [
     ("Manual X-Axis Control", 1),
     ("Manual Y-Axis Control", 2),
+    ("Manual Servo Control", 3)
 ]
 
 def ShowChoice():

@@ -28,8 +28,7 @@ def halfway():
     print ('50')
 
 def customMM():
-    from customMillimeter import customAmtMM
-    dutyCycleCalc = customAmtMM*0.05 + 5
+    from customMillimeter import dutyCycleCalc
     #pwn.ChangeDutyCycle(dutyCycleCalc)
     print (dutyCycleCalc)
 

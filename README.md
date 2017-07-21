@@ -7,4 +7,4 @@ I mean **it won't work** on Windows, but anyways it would be just cloning the th
 ### RPi Install
 Clone the repository.
 ## Todo
-### Servo stuff
+### ~~Servo stuff~~
