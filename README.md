@@ -8,3 +8,4 @@ I mean **it won't work** on Windows, but anyways it would be just cloning the th
 Clone the repository.
 ## Todo
 ### ~~Servo stuff~~
+### Motor Stuff
