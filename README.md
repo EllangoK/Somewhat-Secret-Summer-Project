@@ -9,3 +9,4 @@ Clone the repository.
 ## Todo
 ### ~~Servo stuff~~
 ### Motor Stuff
+### Fix Selector and GUI/Make it easier and simpler

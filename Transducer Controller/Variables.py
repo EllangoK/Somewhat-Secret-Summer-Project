@@ -8,3 +8,6 @@ yDirPin = 20
 servoControlPin = 21
 centerX = 300
 centerY = 500
+cw = 1 #clockwise
+ccw = 0 #counterclockwise
+delay = 1 / stepsPerRotation
