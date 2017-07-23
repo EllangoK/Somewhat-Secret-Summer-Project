@@ -157,3 +157,12 @@ def moveStepperDegrees(axis, dir, amount):
             sys.exit()
     else:
         sys.exit()
+
+def setServoMM(amount):
+    #GPIO.setmode(GPIO.BCM)
+    #GPIO.setup(servoControlPin, GPIO.OUT)
+    #pwm = GPIO.PWM(servoControlPin, 50)
+    #pwm.start(5)
+    dutyCycleCalc = amount*0.05 + 5
+    #pwm.ChangeDutyCycle(dutyCycleCalc)
+    #GPIO.cleanup()

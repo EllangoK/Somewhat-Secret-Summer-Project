@@ -1,5 +1,6 @@
 from Variables import servoControlPin
 from tkinter import *
+from movements import *
 import sys
 #import RPi.GPIO as GPIO
 import time
@@ -16,21 +17,20 @@ root = Tk()
 v = IntVar()
 
 def none():
-    #pwm.ChangeDutyCycle(5)
+    setServoMM(0)
     print ('0')
         
 def full():
-    #pwm.ChangeDutyCycle(10)
+    setServoMM(100)
     print ('100')
 
 def halfway():
-    #pwm.ChangeDutyCycle(7.5)
+    setServoMM(50)
     print ('50')
 
 def customMM():
-    from customMillimeter import dutyCycleCalc
-    #pwn.ChangeDutyCycle(dutyCycleCalc)
-    print (dutyCycleCalc)
+    from customMillimeter import customAmtMM
+    print (customAmtMM)
 
 def exitAll():
     sys.exit()
@@ -46,7 +46,7 @@ Movement = [
     ("All the way in (0 mm)", 1),
     ("Halfway (50 mm)", 2),
     ("All the way out (100 mm)", 3),
-    ("Custom Value (mm)", 4),
+    ("Custom Value (mm) Click again after entering", 4),
     ("Exit", 5)
 ]
 
