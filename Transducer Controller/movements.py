@@ -1,17 +1,39 @@
 from Variables import *
 import sys
 from time import sleep
-#import RPi.GPIO as GPIO
 
-#Pin initiliasition
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setup(xDirPin, GPIO.OUT)
-#GPIO.setup(xStepPin, GPIO.OUT)
-#GPIO.setup(yDirPin, GPIO.OUT) 
-#GPIO.setup(yStepPin, GPIO.OUT)
+def forwardSquareSpiral():
+    for x in range(10):
+        for x in range(10):
+            moveStepperInch("x", "forward", .1)
+            sleep(timeRequiredForTransducerToScan)
+        moveStepperInch("y", "backward", .1)
+        for x in range(10):
+            moveStepperInch("x", "backward", .1)
+            sleep(timeRequiredForTransducerToScan)
+        moveStepperInch("y", "backward", .1)
+
+def backwordSquareSpiral():
+    for x in range(10):
+        for x in range(10):
+            moveStepperInch("x", "backward", .1)
+            sleep(timeRequiredForTransducerToScan)
+        moveStepperInch("y", "forward", .1)
+        for x in range(10):
+            moveStepperInch("x", "forward", .1)
+            sleep(timeRequiredForTransducerToScan)
+        moveStepperInch("y", "forward", .1)
 
 def moveStepperInch(axis, dir, amount):
     # 1 inch = 268.5 revolutions = 53700 steps
+    #import RPi.GPIO as GPIO
+
+    #Pin initiliasition
+    #GPIO.setmode(GPIO.BCM)
+    #GPIO.setup(xDirPin, GPIO.OUT)
+    #GPIO.setup(xStepPin, GPIO.OUT)
+    #GPIO.setup(yDirPin, GPIO.OUT) 
+    #GPIO.setup(yStepPin, GPIO.OUT)
     amount = 53700 * amount
     amount = int(round(amount))
     if axis == "y":
@@ -62,6 +84,14 @@ def moveStepperInch(axis, dir, amount):
 def moveStepperMM(axis, dir, amount):
     # 1 inch = 268.5 revolutions = 53700 steps
     # 1 inch = 25.4 mm
+    #import RPi.GPIO as GPIO
+
+    #Pin initiliasition
+    #GPIO.setmode(GPIO.BCM)
+    #GPIO.setup(xDirPin, GPIO.OUT)
+    #GPIO.setup(xStepPin, GPIO.OUT)
+    #GPIO.setup(yDirPin, GPIO.OUT) 
+    #GPIO.setup(yStepPin, GPIO.OUT)
     amount = (53700 * amount)/25.4
     amount = int(round(amount))
     if axis == "y":
@@ -111,6 +141,14 @@ def moveStepperMM(axis, dir, amount):
 
 def moveStepperDegrees(axis, dir, amount):
     # 1 step = 1.8 degrees/ 26.85 = 0.0670391061 degrees per step
+    #import RPi.GPIO as GPIO
+
+    #Pin initiliasition
+    #GPIO.setmode(GPIO.BCM)
+    #GPIO.setup(xDirPin, GPIO.OUT)
+    #GPIO.setup(xStepPin, GPIO.OUT)
+    #GPIO.setup(yDirPin, GPIO.OUT) 
+    #GPIO.setup(yStepPin, GPIO.OUT)
     amount = (amount)/(1.8/26.85)
     amount = int(round(amount))
     if axis == "y":
