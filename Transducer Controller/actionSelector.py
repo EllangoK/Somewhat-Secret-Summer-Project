@@ -5,53 +5,50 @@ root = Tk()
 
 v = IntVar()
 
-#def manualX():
-#    choice = "manualX"
-#    return choice
+def manualX():
+    choice = "manualX"
+    return choice
+    root.quit()
 
-#def manualY():
-#    choice = "manualY"
-#    return choice
+def manualY():
+    choice = "manualY"
+    return choice
+    root.quit()
 
-#def manualServo():
-#    choice = "manualServo"
-#    return choice
+def manualServo():
+    choice = "manualServo"
+    return choice
+    root.quit()
 
-#options = {1 : manualX,
-#                2 : manualY,
-#                3 : manualServo
-#}
+def exit():
+    sys.exit()
+
+options = {1 : manualX,
+                2 : manualY,
+                3 : manualServo,
+                0 : exit
+}
 
 Movement = [
     ("Manual X-Axis Control", 1),
     ("Manual Y-Axis Control", 2),
-    ("Manual Servo Control", 3)
+    ("Manual Servo Control", 3),
+    ("Exit", 0)
 ]
 
 def ShowChoice():
-    #options[v.get()]()
+    choice = options[v.get()]()
     root.quit()
-    if v.get() == 1:
-        choice = "manualX"
-        return choice
-    elif v.get() == 2:
-        choice = "manualY"
-        return choice
-    elif v.get() == 3:
-        choice = "manualServo"
-        return choice
-    else:
-        sys.exit()
-        return choice
+    return choice
 
-
-Label(root, 
+def chooseChoice():
+    Label(root, 
       text="""What do you want to do?""",
       justify = LEFT,
       padx = 20).pack()
 
-for txt, val in Movement:
-    Radiobutton(root, 
+    for txt, val in Movement:
+        Radiobutton(root, 
                 text=txt,
                 indicatoron = 0,
                 width = 20,
@@ -59,5 +56,6 @@ for txt, val in Movement:
                 variable=v, 
                 command=ShowChoice,
                 value=val).pack(anchor=W)
-
-mainloop()
+    mainloop()
+    choice = ShowChoice()
+    return choice

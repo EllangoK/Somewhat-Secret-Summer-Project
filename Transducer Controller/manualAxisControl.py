@@ -1,6 +1,7 @@
 from Variables import xStepPin, xDirPin, yStepPin, yDirPin, stepsPerRotation, stepDegrees, cw, ccw, delay
-from actionSelector import choice
-from selectDegreeInchesMM import movementType
+from actionSelector import chooseChoice
+choice = chooseChoice()
+from selectDegreeInchesMM import createOptionMovementType
 import sys
 from time import sleep
 #import RPi.GPIO as GPIO
@@ -12,8 +13,8 @@ from time import sleep
 #GPIO.setup(yDirPin, GPIO.OUT) 
 #GPIO.setup(yStepPin, GPIO.OUT)
 
-
 if choice == "manualX":
+    movementType = createOptionMovementType()
     if movementType == "inches":
         print("a")
     elif movementType == "degrees":
@@ -21,13 +22,13 @@ if choice == "manualX":
     elif movementType == "mm":
         print("a")
     else:
-        print("b")
         sys.exit()
 elif choice == "manualY":
+    movementType = createOptionMovementType()
     if movementType == "inches":
-        print("d")
+        print("a")
     elif movementType == "degrees":
-        print("d")
+        print("c")
     elif movementType == "mm":
         print("d")
     else:
