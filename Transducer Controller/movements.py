@@ -13,7 +13,7 @@ from time import sleep
 def moveStepperInch(axis, dir, amount):
     # 1 inch = 268.5 revolutions = 53700 steps
     amount = 53700 * amount
-    amount = int(amount)
+    amount = int(round(amount))
     if axis == "y":
         if dir == "forward":
             for x in range (amount):
@@ -63,7 +63,7 @@ def moveStepperMM(axis, dir, amount):
     # 1 inch = 268.5 revolutions = 53700 steps
     # 1 inch = 25.4 mm
     amount = (53700 * amount)/25.4
-    amount = int(amount)
+    amount = int(round(amount))
     if axis == "y":
         if dir == "forward":
             for x in range (amount):
@@ -112,7 +112,7 @@ def moveStepperMM(axis, dir, amount):
 def moveStepperDegrees(axis, dir, amount):
     # 1 step = 1.8 degrees/ 26.85 = 0.0670391061 degrees per step
     amount = (amount)/(1.8/26.85)
-    amount = int(amount)
+    amount = int(round(amount))
     if axis == "y":
         if dir == "forward":
             for x in range (amount):
