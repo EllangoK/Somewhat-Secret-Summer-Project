@@ -10,5 +10,5 @@ centerX = 300
 centerY = 500
 cw = 1 #clockwise
 ccw = 0 #counterclockwise
-delay = 1 / stepsPerRotation
-timeRequiredForTransducerToScan = 1
+delay = 1 / 53700
+timeRequiredForTransducerToScan = 0
