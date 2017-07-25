@@ -1,10 +1,10 @@
 stepDegrees = 1.8
 degreesInRotation = 360
 stepsPerRotation = degreesInRotation/stepDegrees
-xStepPin = 19
-xDirPin = 26
-yStepPin = 16
-yDirPin = 20
+xStepPin = 26
+xDirPin = 19
+yStepPin = 20
+yDirPin = 16
 servoControlPin = 21
 centerX = 300
 centerY = 500
